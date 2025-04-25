@@ -11,7 +11,7 @@ const PostListPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/posts");
+        const response = await axios.get("/posts");
         setPosts(response.data);
       } catch (err) {
         console.error("게시글 목록을 불러오는 데 실패했습니다.", err);

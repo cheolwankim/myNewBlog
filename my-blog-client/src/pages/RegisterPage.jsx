@@ -16,14 +16,10 @@ const RegisterPage = () => {
     setError("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/register",
-        {
-          email,
-          password,
-        }
-      );
-
+      const response = await axios.post("/register", {
+        email,
+        password,
+      });
       const { token, user } = response.data;
 
       // 회원가입 성공 후 자동 로그인

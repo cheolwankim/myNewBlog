@@ -14,9 +14,7 @@ const EditPage = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/api/posts/${id}`
-        );
+        const response = await axios.get(`/posts/${id}`);
         const post = response.data;
 
         // 작성자가 아닌 경우 → 메인 페이지로 이동
@@ -42,7 +40,7 @@ const EditPage = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/posts/${id}`,
+        `/posts/${id}`,
         { title, content },
         {
           headers: {
