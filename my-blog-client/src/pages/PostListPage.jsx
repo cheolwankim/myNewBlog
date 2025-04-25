@@ -9,7 +9,6 @@ const PostListPage = () => {
 
   // 게시글 목록 불러오기
   useEffect(() => {
-    console.log("✅ BASE URL 확인:", process.env.NEXT_PUBLIC_API_URL);
     const fetchPosts = async () => {
       try {
         const response = await axios.get("/posts");
