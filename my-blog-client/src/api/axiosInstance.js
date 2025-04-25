@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL, // 환경변수에서 처리
+  baseURL: process.env.REACT_APP_API_URL, // CRA는 REACT_APP_ 여야 함
 });
 
 // 요청 보낼 때마다 localStorage에서 토큰 자동으로 읽어와 헤더에 추가
