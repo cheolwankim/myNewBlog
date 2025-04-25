@@ -12,9 +12,17 @@ const PostListPage = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get("/posts");
-        setPosts(response.data);
+
+        // 응답이 배열인지 확인
+        if (Array.isArray(response.data)) {
+          setPosts(response.data);
+        } else {
+          console.error("응답 형식이 배열이 아닙니다:", response.data);
+          setPosts([]);
+        }
       } catch (err) {
         console.error("게시글 목록을 불러오는 데 실패했습니다.", err);
+        setPosts([]); // 에러가 발생해도 렌더링 실패하지 않도록
       }
     };
 
@@ -43,22 +51,26 @@ const PostListPage = () => {
       )}
 
       <ul style={{ listStyle: "none", padding: 0 }}>
-        {posts.map((post) => (
-          <li
-            key={post._id}
-            style={{
-              marginBottom: "20px",
-              borderBottom: "1px solid #ccc",
-              paddingBottom: "10px",
-            }}
-          >
-            <Link to={`/posts/${post._id}`}>
-              <h3>{post.title}</h3>
-              <p>{post.content.slice(0, 100)}...</p>
-              <small>작성자: {post?.author || "알 수 없음"}</small>
-            </Link>
-          </li>
-        ))}
+        {Array.isArray(posts) && posts.length > 0 ? (
+          posts.map((post) => (
+            <li
+              key={post._id}
+              style={{
+                marginBottom: "20px",
+                borderBottom: "1px solid #ccc",
+                paddingBottom: "10px",
+              }}
+            >
+              <Link to={`/posts/${post._id}`}>
+                <h3>{post.title}</h3>
+                <p>{post.content.slice(0, 100)}...</p>
+                <small>작성자: {post?.author || "알 수 없음"}</small>
+              </Link>
+            </li>
+          ))
+        ) : (
+          <li>게시글이 없습니다.</li>
+        )}
       </ul>
     </div>
   );
