@@ -1,0 +1,18 @@
+# node modules
+node_modules/
+
+# 환경 변수
+.env
+.env.local
+
+# 빌드 산출물
+build/
+dist/
+.next/
+out/
+
+# OS 파일
+.DS_Store
+
+# IDE 설정
+.vscode/
