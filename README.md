@@ -1,4 +1,4 @@
-# 📝 My Blog - 포트폴리오용 풀스택 블로그 프로젝트
+# 📝 My Blog - 풀스택 블로그 프로젝트
 
 > 사용자 인증, 게시글 및 댓글 기능이 포함된 React + Express + MongoDB 기반의 실전형 블로그 애플리케이션입니다.
 
@@ -109,4 +109,4 @@ CLIENT_URL=https://your-vercel-url.vercel.app
 ## 🙋‍♂️ 만든 사람
 
 - GitHub: [cheolwankim](https://github.com/cheolwankim)
-- 포트폴리오용 프로젝트로 실전 경험과 기술 학습을 겸해 진행하였습니다.
+- 실전 경험과 기술 학습을 겸해 진행
