@@ -2,12 +2,16 @@
 
 > 사용자 인증, 게시글 및 댓글 기능이 포함된 React + Express + MongoDB 기반의 실전형 블로그 애플리케이션입니다.
 
+<br>
+
 ---
 
 ## 🌐 배포 주소
 
 - **Frontend (Vercel)** 👉 [https://your-vercel-url.vercel.app](#)
 - **Backend (Render)** 👉 [https://mynewblog.onrender.com](https://mynewblog.onrender.com)
+
+<br>
 
 ---
 
@@ -20,6 +24,8 @@
 | 배포    | Vercel (정적 프론트), Render (백엔드 API 서버)              |
 | 기타    | 환경 변수 관리, 클라우드 DB (MongoDB Atlas), CORS 설정        |
 
+<br>
+
 ---
 
 ## 🔑 주요 기능 요약
@@ -30,6 +36,23 @@
 - 작성자 권한 기반의 수정/삭제 제한
 - 로그인 여부에 따라 동적 UI 렌더링
 - 환경변수를 활용한 API 서버 분기 처리
+
+<br>
+---
+
+## 주요 화면  
+
+![Image](https://github.com/user-attachments/assets/69511e38-66fe-42b6-88f2-305d086e68b1)
+<br>
+![Image](https://github.com/user-attachments/assets/7deb8b35-41f7-414f-86bd-34c660361c22)
+<br>
+![Image](https://github.com/user-attachments/assets/12f34bea-efd4-497d-9121-e9ac6e4e4319)
+<br>
+![Image](https://github.com/user-attachments/assets/f628f17c-beb3-4d82-b7cc-532802ae3a04)
+<br>
+![Image](https://github.com/user-attachments/assets/83e7815c-2c81-438a-a3e2-ec837c0529ca)
+<br>
+
 
 ---
 
@@ -77,6 +100,8 @@ JWT_SECRET=<JWT 서명 키>
 CLIENT_URL=https://your-vercel-url.vercel.app
 ```
 
+<br>
+
 ---
 
 ## 🛠 문제 해결 경험 (트러블슈팅)
@@ -88,6 +113,8 @@ CLIENT_URL=https://your-vercel-url.vercel.app
 | `localhost` 하드코딩         | 배포된 환경에서는 localhost가 없음   | 환경변수 기반으로 API 주소 관리 구조 변경                                     |
 | 백엔드에 React가 올라감          | HTML 반환 → API 작동 안함       | Vercel은 프론트 전용, Render에는 백엔드만 따로 배포                           |
 
+<br>
+
 ---
 
 ## ✨ 프로젝트에서 얻은 인사이트
@@ -97,6 +124,8 @@ CLIENT_URL=https://your-vercel-url.vercel.app
 - JWT 인증 흐름과 미들웨어 구조 학습
 - 실제 배포 과정에서 환경변수 관리 및 라우팅 문제 해결 경험
 - API 에러 응답 처리 및 디버깅 노하우 향상
+
+<br>
 
 ---
 
