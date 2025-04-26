@@ -8,7 +8,7 @@
 
 ## 🌐 배포 주소
 
-- **Frontend (Vercel)** 👉 [https://your-vercel-url.vercel.app](#)
+- **Frontend (Vercel)** 👉 [https://your-vercel-url.vercel.app](https://my-new-blog-self.vercel.app/)
 - **Backend (Render)** 👉 [https://mynewblog.onrender.com](https://mynewblog.onrender.com)
 
 <br>
