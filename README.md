@@ -42,15 +42,8 @@
 
 ## 주요 화면  
 
-![Image](https://github.com/user-attachments/assets/69511e38-66fe-42b6-88f2-305d086e68b1)
-<br>
 ![Image](https://github.com/user-attachments/assets/7deb8b35-41f7-414f-86bd-34c660361c22)
 <br>
-![Image](https://github.com/user-attachments/assets/12f34bea-efd4-497d-9121-e9ac6e4e4319)
-<br>
-![Image](https://github.com/user-attachments/assets/f628f17c-beb3-4d82-b7cc-532802ae3a04)
-<br>
-![Image](https://github.com/user-attachments/assets/83e7815c-2c81-438a-a3e2-ec837c0529ca)
 <br>
 
 
