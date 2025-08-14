@@ -42,17 +42,15 @@
 
 ## 주요 화면  
 
-![Image](https://github.com/user-attachments/assets/7deb8b35-41f7-414f-86bd-34c660361c22)  
-<br>
-![Image](https://github.com/user-attachments/assets/a406622e-b9ed-4704-81bd-4827766b4a74)  
-<br>
-![Image](https://github.com/user-attachments/assets/e51ba5e1-b08e-4a05-bc33-7fde8d6f400f)  
-<br>
-![Image](https://github.com/user-attachments/assets/a7c4eb68-b7b6-41b6-927e-195c8ad447fd)  
-<br>
-![Image](https://github.com/user-attachments/assets/57410709-8c7f-45e4-b380-dd77d35bdee6)  
-<br>
-
+<img width="847" height="264" alt="Image" src="https://github.com/user-attachments/assets/1d278577-743e-4dfb-9027-a3fca2232338" />
+<br><br><br>
+<img width="518" height="444" alt="Image" src="https://github.com/user-attachments/assets/a68a890b-c40e-4d61-83a5-af34752375d7" /><br><br><br>
+<img width="515" height="423" alt="Image" src="https://github.com/user-attachments/assets/5dec9527-aac4-4b4d-8f1a-1f5a9641b673" /><br><br><br>
+<img width="827" height="269" alt="Image" src="https://github.com/user-attachments/assets/c7160040-46c4-48cf-84d3-e2698caec3a9" /><br><br><br>
+<img width="795" height="555" alt="Image" src="https://github.com/user-attachments/assets/76632e7a-5ff0-4d2c-9747-d36d8ff1e147" /><br><br><br>
+<img width="792" height="437" alt="Image" src="https://github.com/user-attachments/assets/8d22188a-7f1f-4e70-bbad-80b1cd12f491" /><br><br><br>
+<img width="796" height="394" alt="Image" src="https://github.com/user-attachments/assets/1079ab69-1d6a-4a47-9684-3cc75250f2be" /><br><br><br>
+<img width="801" height="465" alt="Image" src="https://github.com/user-attachments/assets/5c5dcc1d-7564-4dbf-810a-1d1b5b9b9b11" /><br><br><br>
 
 ---
 
