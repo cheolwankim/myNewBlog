@@ -4,7 +4,7 @@ import axios from "../api/axiosInstance";
 import { useAuth } from "../contexts/AuthContext";
 
 const EditPage = () => {
-  const { id } = useParams(); // 게시글 ID
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,6 @@ const EditPage = () => {
         const response = await axios.get(`/posts/${id}`);
         const post = response.data;
 
-        // 작성자가 아닌 경우 → 메인 페이지로 이동
         if (!user || user.email !== post?.author) {
           alert("수정 권한이 없습니다.");
           return navigate("/");
@@ -26,7 +25,7 @@ const EditPage = () => {
         setTitle(post.title);
         setContent(post.content);
         setLoading(false);
-      } catch (err) {
+      } catch {
         alert("게시글을 불러오는 데 실패했습니다.");
         navigate("/");
       }
@@ -51,42 +50,60 @@ const EditPage = () => {
 
       alert("게시글이 수정되었습니다.");
       navigate(`/posts/${id}`);
-    } catch (err) {
+    } catch {
       alert("수정에 실패했습니다.");
     }
   };
 
-  if (loading) return <p>로딩 중...</p>;
+  if (loading) return <p className="text-center text-gray-500">로딩 중...</p>;
 
   return (
-    <div style={{ maxWidth: "700px", margin: "40px auto" }}>
-      <h2>게시글 수정</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        게시글 수정
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* 제목 입력 */}
         <div>
-          <label>제목</label>
-          <br />
+          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+            제목
+          </label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px" }}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 
+                       dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
         </div>
-        <div style={{ marginTop: "15px" }}>
-          <label>내용</label>
-          <br />
+
+        {/* 내용 입력 */}
+        <div>
+          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+            내용
+          </label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
             rows="10"
-            style={{ width: "100%", padding: "8px" }}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 
+                       dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
         </div>
-        <button type="submit" style={{ marginTop: "20px" }}>
-          수정 완료
-        </button>
+
+        {/* 버튼 */}
+        <div>
+          <button
+            type="submit"
+            className="text-blue-500 hover:underline font-medium"
+          >
+            수정 완료
+          </button>
+        </div>
       </form>
     </div>
   );

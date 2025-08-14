@@ -12,8 +12,6 @@ const PostListPage = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get("/posts");
-
-        // 응답이 배열인지 확인
         if (Array.isArray(response.data)) {
           setPosts(response.data);
         } else {
@@ -22,7 +20,7 @@ const PostListPage = () => {
         }
       } catch (err) {
         console.error("게시글 목록을 불러오는 데 실패했습니다.", err);
-        setPosts([]); // 에러가 발생해도 렌더링 실패하지 않도록
+        setPosts([]);
       }
     };
 
@@ -30,48 +28,72 @@ const PostListPage = () => {
   }, []);
 
   return (
-    <div style={{ maxWidth: "700px", margin: "40px auto" }}>
-      <h2>블로그 게시글</h2>
+    <div className="max-w-3xl mx-auto mt-10 px-4">
+      <h2 className="text-3xl font-bold mb-6 text-center">블로그 게시글</h2>
 
       {/* 로그인 상태에 따라 UI 다르게 */}
       {user ? (
-        <div style={{ marginBottom: "20px" }}>
-          <span>환영합니다, {user.email}님!</span>
-          <button onClick={logout} style={{ marginLeft: "10px" }}>
+        <div className="flex flex-wrap items-center gap-3 mb-6">
+          <span className="text-gray-700 dark:text-gray-200">
+            환영합니다, <span className="font-semibold">{user.email}</span>님!
+          </span>
+
+          <Link to="/write">
+            <button className="text-blue-500 hover:underline font-medium">
+              글쓰기
+            </button>
+          </Link>
+
+          <button
+            onClick={logout}
+            className="text-red-500 hover:underline font-medium"
+          >
             로그아웃
           </button>
-          <Link to="/write">
-            <button style={{ marginLeft: "10px" }}>글쓰기</button>
-          </Link>
         </div>
       ) : (
-        <div style={{ marginBottom: "20px" }}>
-          <Link to="/login">로그인</Link> / <Link to="/register">회원가입</Link>
+        <div className="mb-6 space-x-2">
+          <Link
+            to="/login"
+            className="text-blue-500 hover:underline font-medium"
+          >
+            로그인
+          </Link>
+
+          <Link
+            to="/register"
+            className="text-blue-500 hover:underline font-medium"
+          >
+            회원가입
+          </Link>
         </div>
       )}
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {Array.isArray(posts) && posts.length > 0 ? (
-          posts.map((post) => (
+      {/* 게시글 목록 */}
+      {Array.isArray(posts) && posts.length > 0 ? (
+        <ul className="space-y-5">
+          {posts.map((post) => (
             <li
               key={post._id}
-              style={{
-                marginBottom: "20px",
-                borderBottom: "1px solid #ccc",
-                paddingBottom: "10px",
-              }}
+              className="border-b pb-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
             >
-              <Link to={`/posts/${post._id}`}>
-                <h3>{post.title}</h3>
-                <p>{post.content.slice(0, 100)}...</p>
-                <small>작성자: {post?.author || "알 수 없음"}</small>
+              <Link to={`/posts/${post._id}`} className="block">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-2">
+                  {post.content?.slice(0, 100)}...
+                </p>
+                <small className="text-gray-500 dark:text-gray-400">
+                  작성자: {post?.author || "알 수 없음"}
+                </small>
               </Link>
             </li>
-          ))
-        ) : (
-          <li>게시글이 없습니다.</li>
-        )}
-      </ul>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-gray-500">게시글이 없습니다.</p>
+      )}
     </div>
   );
 };

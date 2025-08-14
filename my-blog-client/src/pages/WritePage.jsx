@@ -9,7 +9,6 @@ const WritePage = () => {
   const { user, token } = useAuth();
   const navigate = useNavigate();
 
-  // 로그인하지 않았을 경우 /login으로 리디렉션
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -32,40 +31,59 @@ const WritePage = () => {
 
       alert("게시글이 작성되었습니다.");
       navigate("/");
-    } catch (err) {
+    } catch {
       alert("작성에 실패했습니다.");
     }
   };
 
   return (
-    <div style={{ maxWidth: "700px", margin: "40px auto" }}>
-      <h2>게시글 작성</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        게시글 작성
+      </h2>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* 제목 입력 */}
         <div>
-          <label>제목</label>
-          <br />
+          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+            제목
+          </label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px" }}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 
+                       dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
         </div>
-        <div style={{ marginTop: "15px" }}>
-          <label>내용</label>
-          <br />
+
+        {/* 내용 입력 */}
+        <div>
+          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+            내용
+          </label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
             rows="10"
-            style={{ width: "100%", padding: "8px" }}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 
+                       dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
         </div>
-        <button type="submit" style={{ marginTop: "20px" }}>
-          작성하기
-        </button>
+
+        {/* 작성 버튼 */}
+        <div>
+          <button
+            type="submit"
+            className="text-blue-500 hover:underline font-medium"
+          >
+            작성하기
+          </button>
+        </div>
       </form>
     </div>
   );

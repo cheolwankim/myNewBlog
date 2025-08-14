@@ -16,10 +16,7 @@ const RegisterPage = () => {
     setError("");
 
     try {
-      const response = await axios.post("/register", {
-        email,
-        password,
-      });
+      const response = await axios.post("/register", { email, password });
       const { token, user } = response.data;
 
       // 회원가입 성공 후 자동 로그인
@@ -31,34 +28,68 @@ const RegisterPage = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto" }}>
-      <h2>회원가입</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>이메일</label>
-          <br />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div style={{ marginTop: "10px" }}>
-          <label>비밀번호</label>
-          <br />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit" style={{ marginTop: "20px" }}>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-200">
           회원가입
-        </button>
-      </form>
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              이메일
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 
+                         rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 
+                         focus:outline-none dark:bg-gray-700 dark:border-gray-600 
+                         dark:text-white"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              비밀번호
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 
+                         rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 
+                         focus:outline-none dark:bg-gray-700 dark:border-gray-600 
+                         dark:text-white"
+            />
+          </div>
+
+          {error && (
+            <p className="text-red-500 text-sm">{error}</p>
+          )}
+
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-gradient-to-r from-green-400 to-emerald-500 
+                       text-white font-semibold rounded-lg shadow-md hover:shadow-lg 
+                       transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            회원가입
+          </button>
+        </form>
+
+        <p className="mt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
+          이미 계정이 있으신가요?{" "}
+          <a
+            href="/login"
+            className="text-green-500 hover:underline font-medium"
+          >
+            로그인
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
